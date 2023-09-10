@@ -1,6 +1,6 @@
 import pycountry
 
-class currency_name:
+class Currency_name:
 
     def __init__(self, country_name) -> None:
         self.country_name = country_name
@@ -9,7 +9,7 @@ class currency_name:
         _country = pycountry.countries.get(name=self.country_name)
 
         if _country:
-            _currency = pycountry.currencies.get(numeric=country.numeric)
+            _currency = pycountry.currencies.get(numeric=_country.numeric)
             if _currency:
                 return _currency.alpha_3
             else:

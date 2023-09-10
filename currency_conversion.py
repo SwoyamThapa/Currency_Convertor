@@ -9,12 +9,12 @@ class Currency_conversion:
 
 
     def convert(self):
-        url1 = f"https://v6.exchangerate-api.com/v6/d75582718ec3b2f1f371b78b/latest/{self.base_currency}"
-
-        api_key = 'd75582718ec3b2f1f371b78b'  # Replace with your actual API key
+        api_key = 'd75582718ec3b2f1f371b78b' 
+        url = f"https://v6.exchangerate-api.com/v6/{api_key}/latest/{self.base_currency}"
+        # Replace with your actual API key
         headers = {'apikey': api_key}
 
-        response = requests.get(url1, headers)
+        response = requests.get(url)
 
         # Check if the request was successful (status code 200)
         if response.status_code == 200:
