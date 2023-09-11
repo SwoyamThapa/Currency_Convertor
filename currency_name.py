@@ -13,8 +13,8 @@ class Currency_name:
             if _currency:
                 return _currency.alpha_3
             else:
-                return "no_currency"
+                return "not found"
         else:
-            return "no_country"
+            return "not found"
 
         

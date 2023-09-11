@@ -21,10 +21,16 @@ class Currency_conversion:
             data = response.json()
         
         # Extract the exchange rate from the response
-            exchange_rate = data['conversion_rates'][self.target_currency]
-    
-        # Print the exchange rate
-            print(f"1 {self.base_currency} is equal to {exchange_rate:.2f} {self.target_currency}")
+            exchange_rates = data['conversion_rates']
+
+            if(self.target_currency in exchange_rates):
+                exchange_rate = data['conversion_rates'][self.target_currency]
+                return exchange_rate
+            else:
+                return "curr2 not available"
         else:
-            print(f"Failed to fetch exchange rates. Status code: {response.status_code}")
+            return "curr1 not available"
+
+    
+    
         
